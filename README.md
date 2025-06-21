@@ -32,7 +32,7 @@ Follow these steps from the root of your project directory:
 
 `git clone https://github.com/ak9675/SimpleTimeService.git`
 
-`cd simpletimeservice`
+`cd SimpleTimeService`
 
 **2. Build the Docker Image:**
 
@@ -50,12 +50,12 @@ _You should see the JSON output in your terminal._
 
 **5. Publish the Image to Docker Hub (Mandatory for Task 2):**
 
-`docker login
-`
-`docker tag simple-time-service <your-dockerhub-username>/simple-time-service:latest
-`
-`docker push <your-dockerhub-username>/simple-time-service:latest
-`
+`docker login`
+
+`docker tag simple-time-service <your-dockerhub-username>/simple-time-service:latest`
+
+`docker push <your-dockerhub-username>/simple-time-service:latest`
+
 Replace <your-dockerhub-username> with your actual Docker Hub username.
 
 
