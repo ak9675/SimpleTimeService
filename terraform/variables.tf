@@ -43,12 +43,10 @@ variable "app_port" {
 }
 
 # Docker image name for the SimpleTimeService
-# IMPORTANT: Replace <your-dockerhub-username> with your actual Docker Hub username.
-# Ensure this image is publicly available on Docker Hub as per Task 1.
 variable "docker_image_name" {
-  description = "The full Docker image name (e.g., yourusername/repo:tag) for SimpleTimeService."
+  description = "Kumar2167-SimpleTimeService-latest-image."
   type        = string
-  default     = "your_dockerhub_username/simple-time-service:latest" # !!! CHANGE THIS !!!
+  default     = "kumar2167/simpletimeservice:latest"
 }
 
 # CPU units for the Fargate task (1024 units = 1 vCPU)
