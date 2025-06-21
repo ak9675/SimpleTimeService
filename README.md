@@ -53,6 +53,7 @@ _You should see the JSON output in your terminal._
 `docker login`
 
 `docker tag simple-time-service <your-dockerhub-username>/simple-time-service:latest`
+
 **For this task image is published at _kumar2167/simpletimeservice_ public docker hub repository.**
 
 `docker push <your-dockerhub-username>/simple-time-service:latest`
