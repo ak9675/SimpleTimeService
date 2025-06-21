@@ -30,10 +30,10 @@ Follow these steps from the root of your project directory:
 
 **1. Clone the Repository:**
 
-`git clone https://github.com/ak9675/SimpleTimeService.git
-`
-`cd simpletimeservice
-`
+`git clone https://github.com/ak9675/SimpleTimeService.git`
+
+`cd simpletimeservice`
+
 **2. Build the Docker Image:**
 
 `docker build -t simple-time-service .`
