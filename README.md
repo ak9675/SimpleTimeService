@@ -133,6 +133,10 @@ When finished, de-provision all resources to avoid costs.
 
 Type _yes_ when prompted.
 
+# Credit Task
+
+A README.md file present at credit/README.md guides through the process of using remote .tfstate files along with using dynamodb table.
+
 **Code Quality and Best Practices**
 
 **Application (Task 1)**
