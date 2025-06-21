@@ -58,21 +58,21 @@ Replace <your-dockerhub-username> with your actual Docker Hub username.
 ****Infrastructure Overview****
 **The Terraform setup provisions:**
 
-_**`A Virtual Private Cloud (VPC) with 2 public and 2 private subnets.
+1-A Virtual Private Cloud (VPC) with 2 public and 2 private subnets.
 
-An Internet Gateway.
+2-An Internet Gateway.
 
-An Application Load Balancer (ALB) in public subnets to expose the service.
+3-An Application Load Balancer (ALB) in public subnets to expose the service.
 
-An ECS Cluster.
+4-An ECS Cluster.
 
-An ECS Fargate task/service to run your container, deployed to private subnets.
+5-An ECS Fargate task/service to run your container, deployed to private subnets.
 
-Appropriate Security Groups and IAM Roles.`**_
+6-Appropriate Security Groups and IAM Roles.`**_
 
-Prerequisites
-Terraform CLI:
-AWS CLI:
+**Prerequisites**
+_Terraform CLI:
+AWS CLI:_
 
 AWS Account & Credentials: Configure your AWS CLI with programmatic access (aws configure). Ensure your IAM user has necessary permissions (VPC, EC2, ECS, ALB, IAM, CloudWatch access).
 
@@ -84,12 +84,12 @@ Navigate to the terraform/ directory within this repository:
 **1. Update Terraform Variables:**
 Open variables.tf and update the docker_image_name variable's default value to your published Docker image name.
 
-# terraform/variables.tf
-variable "docker_image_name" {
+**terraform/variables.tf**
+`variable "docker_image_name" {
   description = "..."
   type        = string
   default     = "your_dockerhub_username/simple-time-service:latest" # <-- UPDATE THIS
-}
+}`
 
 **2. Initialize Terraform:**
 
