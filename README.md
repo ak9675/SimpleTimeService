@@ -60,9 +60,11 @@ Replace <your-dockerhub-username> with your actual Docker Hub username.
 
 
 # Task 2: Infrastructure with Terraform (AWS ECS Fargate)
+
 This task involves deploying the SimpleTimeService to AWS using Terraform to provision the necessary cloud infrastructure.
 
 **Infrastructure Overview**
+
 The Terraform setup provisions:
 
 1-A Virtual Private Cloud (VPC) with 2 public and 2 private subnets.
@@ -78,6 +80,7 @@ The Terraform setup provisions:
 6-Appropriate Security Groups and IAM Roles.
 
 **Prerequisites**
+
 Terraform CLI:
 Installation Guide (HashiCorp) at https://developer.hashicorp.com/terraform/downloads
 
@@ -89,17 +92,24 @@ AWS Account & Credentials: Configure your AWS CLI with programmatic access (aws 
 Published Docker Image: Your simple-time-service image from Task 1 must be publicly available on Docker Hub.
 
 **Workflow**
+
 Navigate to the terraform/ directory within this repository:
 
 **1. Update Terraform Variables:**
+
 Open _variables.tf_ and update the docker_image_name variable's default value to your published Docker image name.
 
 **terraform/variables.tf**
-`variable "docker_image_name" {
-  description = "..."
-  type        = string
-  default     = "your_dockerhub_username/simple-time-service:latest" # <-- UPDATE THIS
-}`
+
+`variable "docker_image_name" {`
+
+  `description = "..."`
+  
+ ` type        = string`
+ 
+ ` default     = "your_dockerhub_username/simple-time-service:latest" # <-- UPDATE THIS`
+ 
+`}`
 
 **2. Initialize Terraform:**
 
@@ -116,6 +126,7 @@ Open _variables.tf_ and update the docker_image_name variable's default value to
 Type _yes_ when prompted. This will create the AWS infrastructure.
 
 **5. Destroy the Infrastructure (Cleanup optional):**
+
 When finished, de-provision all resources to avoid costs.
 
 `terraform destroy`
@@ -123,12 +134,15 @@ When finished, de-provision all resources to avoid costs.
 Type _yes_ when prompted.
 
 **Code Quality and Best Practices**
+
 **Application (Task 1)**
+
 *Small Image Size: Uses a slim base image and efficient pip installation.
 *Non-Root User: Application runs as a non-privileged user inside the container.
 *Production-Ready Server: Utilizes Gunicorn for robust serving.
 
 **Infrastructure (Task 2**)
+
 *Modular Design: Organized Terraform files (main.tf, variables.tf, outputs.tf).
 *Resource Tagging: All AWS resources are properly tagged.
 *Security: Uses specific Security Groups and IAM Roles following the principle of least privilege.
